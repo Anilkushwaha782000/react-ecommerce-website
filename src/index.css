@@ -1,0 +1,941 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: ghostwhite;
+}
+
+#root {}
+
+.grid {
+  display: grid;
+  gap: 9rem;
+}
+
+.grid-two-column {
+  grid-template-columns: 1fr 1fr;
+
+}
+
+
+
+.section {}
+
+.container {
+  max-width: 150rem;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  height: 80%;
+
+}
+
+.card1 {
+  background-image: URL('./credit-card-5459711_1280.png');
+}
+
+.grid1 {
+  display: grid;
+  gap: 9rem;
+}
+
+.grid1-two-column {
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-hero {}
+
+.section-hero-data {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.image-container1 {
+  max-height: 70%;
+  box-shadow: 0px -10px 20px rgba(105, 2, 105, 0.2);
+
+}
+
+.image-container1:hover {
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.hero-para {
+  color: darkslateblue;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-heading {
+
+  font-size: 20px;
+}
+
+/* Card.css */
+
+.card {
+  background-color: #f9f4f969;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #cce7d0;
+  /* border-radius: 25px; */
+  max-height: 80%;
+  overflow: hidden;
+  margin: 16px;
+  margin-bottom: 20px;
+  position: relative;
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 16px 0;
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px) rotate(1deg);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  margin-top: 3px;
+}
+
+.card-content {
+  font-size: 1rem;
+  color: #555555;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  margin: 30px auto;
+  max-width: 1200px;
+  padding: 0 16px;
+
+}
+
+.title-header {
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.card-image {
+  max-height: 40%;
+  width: 100%
+}
+
+
+.cart-container {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cart-item {
+  display: flex;
+
+  gap: 10rem;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cart-summary {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.cart-summary1 {
+  margin-top: 16px;
+}
+
+.cart-button {
+  background-color: #9a56c2;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.itemnumber {
+  font-weight: bold;
+  color: #ff1800fa;
+  position: relative;
+  top: -5px;
+}
+
+.max-w-7xl {
+  max-width: 100.5rem !important;
+}
+
+/* Add these styles to your existing CSS file (index.css) */
+
+.pop-message {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  background-color: rgba(85, 42, 87, 0.95);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: bounceAndFadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+  z-index: 9999;
+}
+
+@keyframes bounceAndFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  70% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delete-pop-message {
+  position: fixed;
+  top: 1px;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  background-color: rgba(85, 42, 87, 0.95);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: bounceAndFadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+}
+
+.card3:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.total-items {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.total-price {
+  font-size: 16px;
+  color: #666;
+}
+
+.checkout-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
+
+#default-search {
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .cart-container {
+    overflow-y: scroll;
+    max-height: 80vh;
+    /* Adjust this value as needed */
+    margin-top: 120px;
+  }
+
+  @keyframes bounceAndFadeIn {
+    0% {
+      opacity: 0;
+
+    }
+
+    70% {}
+
+    100% {
+      opacity: 1;
+
+    }
+  }
+
+  .popmsg {
+    font-size: 25px;
+  }
+}
+
+.w-10.h-10:hover {
+  fill: red;
+  transform: translateY(2px);
+}
+
+.w-10.h-10 {
+  fill: rgb(76, 0, 255);
+}
+
+#btnp {
+  border-radius: 999px;
+  box-shadow: #490243 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to left, salmon 50%, rgb(86, 35, 228) 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+}
+
+#sub {
+  border-radius: 10px;
+  box-shadow: #490243 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding-right: 30px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to left, salmon 50%, rgb(86, 35, 228) 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+  width: auto;
+}
+
+
+#btnp:hover,
+#sub:hover {
+
+  background-position: left;
+
+}
+
+#page-header {
+  background-image: url(b1.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 14px;
+  /* margin-top: 78px; */
+  color: white;
+}
+
+#page-header.about-header {
+  background-image: url(banner.png);
+}
+
+#about-app {
+  text-align: center;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+#about-app .video {
+  width: 70%;
+  height: 100%;
+  margin: 30px auto 0 auto;
+}
+
+#d1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+@media (max-width: 767px) {
+  .container1 {
+    margin-bottom: 5rem!important;
+    grid-template-columns: 1fr;
+
+  }
+
+  .title-header {
+    margin-top: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+    margin-top: 0 !important;
+  }
+
+  .grid1-two-column {
+    flex-direction: column;
+  }
+
+  .section-hero-data {
+    text-align: center;
+  }
+
+  .section-hero-img {
+    margin-top: 20px;
+  }
+
+  #ftr {
+    margin-top: 5rem!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .card1 {
+    height: 550px !important;
+  }
+
+  .grid1-two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .image-container1 {
+    width: 100%;
+    height: 250px;
+  }
+
+  .section-hero-data {
+    margin-left: 0;
+  }
+
+  .grid1 {
+    gap: 2rem;
+  }
+
+  #d1 {
+    font-size: 20px;
+  }
+
+  #about-app .video {
+    width: 100%;
+  }
+
+  .video video {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #cen {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-p1 {
+    padding: 0;
+  }
+
+  #filtc {
+    margin-top: 10px !important;
+  }
+
+  #filtw {
+    width: 90% !important;
+  }
+
+  .grid {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.Container2 {
+  /*height: 120vh;*/
+  width: 100%;
+  background-color: #a4ace1;
+  display: flex;
+}
+
+.rightdiv {
+  width: 75%;
+  background-color: rgb(196, 200, 235);
+  height: -webkit-fill-available;
+}
+
+.grid2 {
+  display: flex;
+  gap: 5rem;
+  margin: 5rem 4rem;
+
+}
+
+.grid-item {
+
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .popup {
+    top: 20% !important;
+    margin: 0 auto;
+
+    left: 19% !important;
+    font-size: 1rem;
+  }
+
+  .pop-message {
+    padding: "5px"
+  }
+
+  .grid2-two-column {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr)!important;
+    gap: 2px;
+  }
+
+  .filter-buttons {
+    display: flex !important;
+  }
+
+  .filter-buttons button {
+    margin-bottom: 5px;
+    margin-top: 50px!important;
+  }
+
+  .btnp {
+    margin-bottom: 20px!important;
+    margin-top: 10px!important;
+  }
+  .showall{
+    margin-top: 70px;
+    top: 27%!important;
+  }
+  .cat{
+    font-size: 1.5rem!important;
+  }
+  .card5{
+    width: 100%!important;
+    margin-top: 10px!important;
+    margin-bottom: 10px;
+    height: 23rem!important
+  }
+  .rightdiv {
+    width: 100%!important;
+    height: -webkit-fill-available!important;
+    background-color: #decfe7!important;
+  }
+  .Container2{
+    display: block!important;
+    height: -webkit-fill-available!important;
+  }
+  .ftrm{
+    margin-top: 5rem!important;
+  }
+  .cbtnp {
+    margin-bottom: 4rem!important;
+    margin-left: 14.5rem!important;
+  }
+  .grid2{
+    place-items: center;
+    display: grid!important;
+  }
+  .h2s{
+    margin-left: 2rem!important;
+    left:35%!important;
+    position: null !important;
+  }
+  .ult{
+    display: grid!important;
+    animation: none!important;
+    white-space: normal!important;
+  }
+  
+  
+
+}
+
+.product-store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+.filter-buttons button {
+  background-color: #131b21;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  height: 40px;
+  margin: 0 10px;
+}
+
+.filter-buttons button:hover {
+  background-color: whitesmoke;
+  color: #0f0505de;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.product-item {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Add more CSS styles as needed */
+.grid2-two-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card5 {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 250px;
+  border: 1px solid green;
+  height: 230px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  background-color: floralwhite;
+}
+
+.card5:hover {
+  transform: translateY(-5px);
+}
+
+.card-image5 {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.card-content5 {
+  padding: 16px;
+}
+
+.card-title5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-description5 {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.card-price5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff5722;
+  /* Change this to your desired price color */
+  margin: 0;
+}
+
+.showall {
+  background-color: black;
+  /* border: 1px solid #0f0f10; */
+  position: absolute;
+  top: 35%;
+  margin-left: 1rem;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.cat{
+  position: absolute;
+  left: 25px;
+  color: #1d1d21;
+  font-size: 2.5rem;
+}
+.cbtnp{
+  position: absolute;
+    margin-left: 18rem;
+}
+
+.ult{
+  /*margin-top:10%;*/
+  list-style-type: disc;
+  
+  font-size: 16px;
+  color: #555;
+  width: 100%; 
+  display: flex;
+  white-space: nowrap; /* Prevents items from wrapping to a new line */
+ /*overflow: hidden; Hides any overflow content */
+  animation: marquee 20s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start from the right edge */
+  }
+  100% {
+    transform: translateX(-100%); /* End at the left edge */
+  }
+}
+.ult li {
+  display: inline-block!important;  /*Display items horizontally */
+  margin-right: 20px; /* Add spacing between items */
+  font-size: 16px;
+  color: #a69aeb;
+  font-weight: bold;
+}
+/* Style for the testimonials section */
+.testimonials {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 5rem;
+}
+
+/* Style for each testimonial */
+.testimonial {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Style for author's name */
+.author {
+  text-align: right;
+  font-style: italic;
+}
+/* Styling for the Newsletter Signup component */
+.newsletter-signup {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.newsletter-signup h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.newsletter-signup p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.newsletter-signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-signup label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.newsletter-signup input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.newsletter-signup button[type="submit"] {
+  background-color: #b73ed5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.newsletter-signup button[type="submit"]:hover {
+  background-color: #60a2e9;
+}
+
+.newsletter-signup p.confirmation-message {
+  font-size: 16px;
+  color: #007bff;
+  margin-top: 10px;
+}
+/* Styling for the FAQ Section */
+.faq-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.faq-item.open {
+  border-color: #007bff; /* Highlight when open */
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.toggle-icon::before {
+  content: "+";
+  font-size: 18px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.faq-item.open .toggle-icon::before {
+  content: "-";
+  transform: rotate(0);
+}
+
+.faq-answer {
+  padding: 10px;
+  background-color: #fff;
+  display: none;
+  color: #555;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+#closecheckout:hover{
+  color: red;
+}
+.Toastify__toast-icon.Toastify--animate-icon.Toastify__zoom-enter + * {
+  /* Your styles go here */
+  /* background-color:darkslategrey!important; */
+  font-size: 14px;
+}
