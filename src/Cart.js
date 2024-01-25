@@ -6,6 +6,7 @@ import Checkoutcart from './Checkoutcart';
 import { motion } from 'framer-motion';
 import CheckoutForm from './CheckoutForm';
 import Modal from './Modal.js'
+import { Link } from 'react-router-dom';
 const Cart = () => {
     const [checkmodal, setModal] = useState(false);
     const { cartItems, addItemToCart, removeItemFromCart, calculateTotalPrice, calculateTotalItems } = useCart();
@@ -73,7 +74,14 @@ const Cart = () => {
                 <div className="cart-container text-center">
                     <h2>Your Cart</h2>
                     <div className="cart-items">
-                        {cartItems.length === 0 ? <p>Cart is empty.</p> : null}
+                        {cartItems.length === 0 ?
+                            <>
+                                <p>Cart is empty.</p>
+                                <Link to={"/products"}>
+                                    <button style={{ marginTop: "20px", backgroundColor: "#956d92", padding: "10px", color: "white", borderRadius: "8px" }} >Continue Shopping...</button>
+                                </Link>
+                            </> : null}
+
                         {cartItems.map(item => (
                             <div key={item.id} className="cart-item">
                                 <img className="mb-4" style={{ maxWidth: '10%' }} src={item.image} />
@@ -87,7 +95,7 @@ const Cart = () => {
                     </div>
 
                 </div>
-                {cartItems.length>0?(<div className="cart-container text-center" style={{ marginTop: '20px' }}>
+                {cartItems.length > 0 ? (<div className="cart-container text-center" style={{ marginTop: '20px' }}>
                     <h2>Product Summary</h2>
 
                     <div className="cart-summary1">
@@ -106,7 +114,7 @@ const Cart = () => {
                         <p className='total-items'>Total Items: {calculateTotalItems()}</p>
                         <p className='total-price'>Total Price: ${calculateTotalPrice().toFixed(2)}</p>
                     </div>
-                </div>):null}
+                </div>) : null}
 
 
 
