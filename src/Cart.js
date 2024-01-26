@@ -9,7 +9,7 @@ import Modal from './Modal.js'
 import { Link } from 'react-router-dom';
 const Cart = () => {
     const [checkmodal, setModal] = useState(false);
-    const { cartItems, addItemToCart, removeItemFromCart, calculateTotalPrice, calculateTotalItems } = useCart();
+    const { clearCart,cartItems, addItemToCart, removeItemFromCart, calculateTotalPrice, calculateTotalItems,submitted } = useCart();
     const Country = ["India", "Pakistan", "England", "Austrlia", "Newzeland"];
     const name1 = useRef();
     const addresss = useRef();
@@ -26,6 +26,9 @@ const Cart = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const handleCheckout = () => {
         setModal(!checkmodal);
+    }
+    const handleClearCart=()=>{
+        clearCart();
     }
 
     const handleChange = (e) => {
@@ -46,7 +49,7 @@ const Cart = () => {
         setModal(false);
     };
     const [checkoutVisible, setCheckoutVisible] = useState(false);
-
+    const [submitted1, setSubmitted] = useState(false);
     const handleCheckout1 = () => {
         if (!checkoutVisible) {
             setCheckoutVisible(true);
@@ -61,6 +64,7 @@ const Cart = () => {
         // window.location.href = '/';
 
     };
+
     // const handleCheckout1 = () => {
     //     setModalOpen(true);
     // };
@@ -70,13 +74,15 @@ const Cart = () => {
     // };
     return (
         <>
-            <div style={{ marginTop: "100px" }}>
+            <div style={{ marginTop: "80px" }}>
+                {cartItems.length===0?null: <button onClick={handleClearCart} style={{ marginTop: "0px", backgroundColor: "#956d92", padding: "8px", color: "white", borderRadius: "8px",position:"absolute",top:"90px",right:"4px" }} >Clear Cart!</button>}
+           
                 <div className="cart-container text-center">
-                    <h2>Your Cart</h2>
+                   {cartItems.length===0?null:<h2>Your Cart</h2>} 
                     <div className="cart-items">
                         {cartItems.length === 0 ?
                             <>
-                                <p>Cart is empty.</p>
+                                <p>Cart is empty!</p>
                                 <Link to={"/products"}>
                                     <button style={{ marginTop: "20px", backgroundColor: "#956d92", padding: "10px", color: "white", borderRadius: "8px" }} >Continue Shopping...</button>
                                 </Link>
@@ -110,7 +116,7 @@ const Cart = () => {
                                 <p>This is your modal content.</p>
                             </Modal>
                         )} */}
-                        <CheckoutForm isVisible={checkoutVisible} onClose={handleCloseCheckout} />
+                        <CheckoutForm isVisible={checkoutVisible} onClose={handleCloseCheckout}/>
                         <p className='total-items'>Total Items: {calculateTotalItems()}</p>
                         <p className='total-price'>Total Price: ${calculateTotalPrice().toFixed(2)}</p>
                     </div>

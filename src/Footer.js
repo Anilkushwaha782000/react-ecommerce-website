@@ -29,7 +29,7 @@ observer.observe(myref.current);
     <div>
       <footer id="fytr" ref={myref}  className="py-5" style={{marginTop:"50px"}}>
         <div  className='container mx-auto' style={{display:"grid", placeItems:"center",borderTop:"2px solid #ddd"}}>
-          <div className="grid grid-cols-2 md:grid-cols-2 mt-4" style={{gap:"32rem"}}>
+          <div className="grid grid-cols-2 md:grid-cols-2 mt-4 md:gap-20" style={{gap:"32rem"}}>
 
             <div className="mb-3 flex flex-col justify-center items-center">
               <h5 className="text-lg font-semibold mb-2">Section</h5>

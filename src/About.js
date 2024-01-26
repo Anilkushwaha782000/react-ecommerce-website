@@ -12,6 +12,7 @@ import vd from './1.mp4';
 import gsap from 'gsap';
 import './index.css'
 import { useEffect } from 'react';
+import Navbar from './Navbar'
 import { useScroll, useTransform, useAnimation, motion } from 'framer-motion'
 const About = () => {
     const { scrollY } = useScroll();
@@ -61,6 +62,7 @@ const About = () => {
     const data = { Name: "Our trusted product" }
     return (
         <>
+        <Navbar/>
             <div>
                 <motion.section
                     id="page-header"

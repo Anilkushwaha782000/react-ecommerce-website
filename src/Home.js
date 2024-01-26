@@ -16,6 +16,7 @@ import heroimg from './ecommerce-3562005_1281.jpg';
 import jeans from './jeans-428613_1280.jpg'
 import hanger from './hangers-1850082_1280.jpg'
 import Cart from './Cart'
+import Navbar from './Navbar'
 import { useState } from 'react'
 import creditcard from './credit-card-5459711_1280.png'
 import TestimonialCarousel from './Testmonials'
@@ -96,6 +97,7 @@ const Home = () => {
       ];
     return (
         <>
+        {/* <Navbar/> */}
             <motion.div className='card1' style={{ height: "350px", opacity: opacitiHero }}>
                 <Herosection data={data} />
 

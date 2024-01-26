@@ -3,15 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './index.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
+  
   const MAX_CART_ITEMS = 10;
   const [showPopUp, setShowPopUp] = useState(false);
   const [showDeletePopUp, setShowDeletePopUp] = useState(false);
   const [showMaxItemsPopUp, setShowMaxItemsPopUp] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-
+ const[clearCart1,setClearCart]=useState(false);
+ const [submitted, setSubmitted] = useState(false);
   const addItemToCart = (item) => {
     var itemlength = calculateTotalItems();
 
@@ -73,7 +76,10 @@ export const CartProvider = ({ children }) => {
 
 
   };
-
+ const clearCart=()=>{
+  
+  setCartItems([]);
+ }
   const removeItemFromCart = (itemId) => {
     const updatedCart = cartItems.filter(item => item.id !== itemId);
     setCartItems(updatedCart);
@@ -117,7 +123,10 @@ export const CartProvider = ({ children }) => {
           calculateTotalPrice,
           calculateTotalItems,
           handleChange,
-          searchTerm
+          searchTerm,
+          clearCart,
+          submitted,
+          setSubmitted
         }}
       >
         {children}
