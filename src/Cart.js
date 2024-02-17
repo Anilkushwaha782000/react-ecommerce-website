@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import CheckoutForm from './CheckoutForm';
 import Modal from './Modal.js'
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar.js';
 const Cart = () => {
     const [checkmodal, setModal] = useState(false);
     const { clearCart,cartItems, addItemToCart, removeItemFromCart, calculateTotalPrice, calculateTotalItems,submitted } = useCart();
@@ -74,6 +75,7 @@ const Cart = () => {
     // };
     return (
         <>
+        <Navbar/>
             <div style={{ marginTop: "80px" }}>
                 {cartItems.length===0?null: <button onClick={handleClearCart} style={{ marginTop: "0px", backgroundColor: "#956d92", padding: "8px", color: "white", borderRadius: "8px",position:"absolute",top:"90px",right:"4px" }} >Clear Cart!</button>}
            

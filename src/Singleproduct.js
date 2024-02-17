@@ -17,6 +17,7 @@ import sneakers from './sneakers-531172_1280.jpg'
 import wristwatch from './wrist-watch-2159351_1280.jpg'
 import perfume from './axe-bodyspray-191361_1280.jpg'
 import { useCart } from './CartContext';
+import Navbar from './Navbar';
 const Singleproduct = () => {
     const { cartItems, addItemToCart, removeItemFromCart, calculateTotalPrice, calculateTotalItems } = useCart();
     function addtocart(item) {
@@ -183,6 +184,7 @@ const Singleproduct = () => {
     }, [])
     return (
         <>
+        <Navbar/>
             <div style={styles.productContainer}>
                 <div style={{ width: "50%" }}>
                     <h1 style={styles.productTitle}>{selectedCard[0].name}</h1>

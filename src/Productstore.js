@@ -19,6 +19,7 @@ import sneakers from './sneakers-531172_1280.jpg'
 import wristwatch from './wrist-watch-2159351_1280.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import Navbar from './Navbar';
 function Productstore() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const { addItemToCart } = useCart();
@@ -59,6 +60,7 @@ function Productstore() {
 
   return (
     <>
+    <Navbar/>
       <div style={{ marginTop: '5px' }}>
         
         <div className="Container2">

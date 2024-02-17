@@ -97,7 +97,7 @@ const Home = () => {
       ];
     return (
         <>
-        {/* <Navbar/> */}
+        <Navbar/>
             <motion.div className='card1' style={{ height: "350px", opacity: opacitiHero }}>
                 <Herosection data={data} />
 
